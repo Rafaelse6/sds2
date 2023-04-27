@@ -1,4 +1,4 @@
-package com.rafaelsantos.dsdelivery.confi;
+package com.rafaelsantos.dsdelivery.config;
 
 import java.util.Arrays;
 
