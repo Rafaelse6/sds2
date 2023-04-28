@@ -10,8 +10,8 @@ import com.rafaelsantos.dsdelivery.entities.Order;
 import com.rafaelsantos.dsdelivery.entities.enums.OrderStatus;
 
 public class OrderDTO implements Serializable {
-	private static final long serialVersionUID = 1L;
 
+	private static final long serialVersionUID = 1L;
 	private Long id;
 	private String address;
 	private Double latitude;
@@ -21,11 +21,9 @@ public class OrderDTO implements Serializable {
 
 	private List<ProductDTO> products = new ArrayList<>();
 
-	public OrderDTO() {
-	}
+	public OrderDTO() {}
 
 	public OrderDTO(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status) {
-		super();
 		this.id = id;
 		this.address = address;
 		this.latitude = latitude;
@@ -41,7 +39,7 @@ public class OrderDTO implements Serializable {
 		this.longitude = entity.getLongitude();
 		this.moment = entity.getMoment();
 		this.status = entity.getStatus();
-		products = entity.getProducts().stream().map(x -> new ProductDTO(x)).collect(Collectors.toList());
+		this.products = entity.getProducts().stream().map(x -> new ProductDTO(x)).collect(Collectors.toList());
 	}
 
 	public Long getId() {
